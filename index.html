@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ef">
+    <meta name="description" content="Қонақ кітабы — жылы лебіздер мен естеліктерге арналған орын.">
+    <title>Қонақ кітабы</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Қонақ кітабы — басты бет">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <span>Қонақ кітабы</span>
+      </a>
+      <nav class="site-nav" aria-label="Негізгі мәзір">
+        <a class="nav-link" href="#home" data-page-link="home">Басты бет</a>
+        <a class="nav-link" href="#all" data-page-link="all">Барлық жазбалар</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Жылы сөз — жүрекке қуат</p>
+          <h1 id="hero-title">Қош келдіңіз!</h1>
+          <p class="hero-description">Бұл жерге өз ойыңызды, жақсы тілегіңізді немесе осы күннен қалған естелікті қалдырыңыз.</p>
+          <a class="button button-light" href="#write">Жазба қалдыру <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-sun"></div>
+          <div class="art-note art-note-back"></div>
+          <div class="art-note art-note-front">
+            <span class="art-sparkle">✳</span>
+            <span class="art-note-line"></span>
+            <span class="art-note-line short"></span>
+            <span class="art-note-heart">♡</span>
+          </div>
+          <span class="art-caption">Ізгі тілек осында</span>
+        </div>
+        <span class="hero-decoration hero-decoration-one" aria-hidden="true">✳</span>
+        <span class="hero-decoration hero-decoration-two" aria-hidden="true">✦</span>
+      </section>
+
+      <section class="content-grid" id="write">
+        <div class="form-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Өз үлесіңізді қосыңыз</p>
+            <h2>Жазба қалдыру</h2>
+            <p>Бір ауыз жылы сөзіңіз де біз үшін қымбат.</p>
+          </div>
+          <form id="entry-form">
+            <label for="guest-name">Есіміңіз</label>
+            <input id="guest-name" name="guestName" type="text" maxlength="60" placeholder="Мысалы, Айдана" autocomplete="name" required>
+
+            <label for="guest-message">Хабарламаңыз</label>
+            <textarea id="guest-message" name="message" rows="5" maxlength="1000" placeholder="Жақсы тілегіңізді осында жазыңыз..." required></textarea>
+            <div class="field-hint"><span>Ізгі ниетпен жазыңыз</span><span>1000 таңбаға дейін</span></div>
+
+            <label for="photo-url">Фото сілтемесі <span class="optional">(міндетті емес)</span></label>
+            <input id="photo-url" name="photoUrl" type="url" inputmode="url" placeholder="https://example.com/photo.jpg">
+
+            <button class="button button-primary submit-button" type="submit">Жазбаны жариялау <span aria-hidden="true">→</span></button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <section class="entries-panel" aria-labelledby="entries-title">
+          <div class="entries-heading">
+            <div class="section-heading">
+              <p class="eyebrow" id="entries-eyebrow">Бүгінгі лебіздер</p>
+              <h2 id="entries-title">Қонақтардың жазбалары</h2>
+            </div>
+            <span class="entry-count" id="entry-count">0</span>
+          </div>
+          <label class="search-box" for="entry-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="entry-search" type="search" placeholder="Есім бойынша іздеу..." autocomplete="off">
+          </label>
+          <div id="entries-list" class="entries-list" aria-live="polite"></div>
+          <a class="all-entries-link" href="#all">Барлық жазбаларды көру <span aria-hidden="true">→</span></a>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Q</span><span>Қонақ кітабы</span></a>
+      <p>Әрбір ізгі тілек — бағалы естелік.</p>
+      <span class="footer-year" id="footer-year"></span>
+    </footer>
+  </body>
+</html>
